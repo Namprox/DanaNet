@@ -1,0 +1,45 @@
+buildscript {
+    // 1. Khai báo phiên bản Kotlin
+    ext.kotlin_version = '1.9.0'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        // 2. Thêm Classpath cho Android Build Tools và Kotlin
+        // Geolocator bắt buộc cần có Kotlin plugin để biên dịch
+        classpath 'com.android.tools.build:gradle:8.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.4.2'
+    }
+}
+
+// 3. Sửa lỗi "compileSdkVersion is not specified")
+// Phải đặt khối ext này ở ngoài cùng (Root Level), ko được để trong buildscript
+ext {
+    compileSdkVersion = 34
+    targetSdkVersion = 34
+    minSdkVersion = 23
+    ndkVersion = "26.1.10909125" // Phiên bản NDK mặc định để tránh lỗi
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
