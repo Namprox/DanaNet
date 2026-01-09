@@ -54,7 +54,7 @@ an toàn.
 Để chạy ứng dụng này trên máy cá nhân, bạn cần cài đặt Flutter SDK và thiết lập môi trường phát
 triển.
 ### 1. Clone dự án
-1/ git clone [https://github.com/username/dananet.git](https://github.com/username/dananet.git)  
+1/ git clone [https://github.com/Namprox/dananet.git](https://github.com/username/dananet.git)  
 2/ cd dananet
 ### 2. Cài đặt các gói phụ thuộc
 flutter pub get
@@ -93,7 +93,6 @@ Mọi đóng góp đều được hoan nghênh! Nếu bạn muốn cải thiện
 5/ Tạo Pull Request
 
 ## 📞 Liên hệ
-Tác giả: Nguyễn Kỳ Nam  
+Tác giả: Nguyễn Nam  
 Email: namky1602@gmail.com  
-Số điện thoại: 0907160203  
-Địa chỉ: K55/28 Ngũ Hành Sơn, Đà Nẵng
+Số điện thoại: 0907160203
